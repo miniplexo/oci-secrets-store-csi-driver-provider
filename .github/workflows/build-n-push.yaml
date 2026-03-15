@@ -26,11 +26,13 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v3.3.0
+        with:
+          ref: main
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
         with:
-          platforms: amd64
+          platforms: amd64,arm64   # ← ONLY CHANGE
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
