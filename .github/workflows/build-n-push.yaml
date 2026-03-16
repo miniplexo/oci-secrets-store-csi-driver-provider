@@ -1,5 +1,8 @@
 name: BuildnPush
 
+permissions:
+  packages: write
+
 on:
   workflow_call:
     inputs:
