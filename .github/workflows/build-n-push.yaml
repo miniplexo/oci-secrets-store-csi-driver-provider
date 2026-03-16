@@ -18,6 +18,8 @@ jobs:
     needs: [unit-tests]
     runs-on: ubuntu-latest
     name: Builds container image and pushes to registry
+    permissions:
+      packages: write
     env:
       IMAGE_REGISTRY: ${{ inputs.IMAGE_REGISTRY }}
     outputs:
