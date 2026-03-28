@@ -17,7 +17,8 @@ endif
 
 # IMAGE_REPO=$(IMAGE_REGISTRY)/oci-secrets-store-csi-driver-provider
 IMAGE_URL=$(IMAGE_REGISTRY)/$(IMAGE_REPO_NAME)
-IMAGE_TAG=$(GIT_TAG)
+GIT_BRANCH ?= $(shell echo $(GITHUB_REF_NAME) | sed 's/\//-/g')
+IMAGE_TAG=$(GIT_BRANCH)
 IMAGE_PATH=$(IMAGE_URL):$(IMAGE_TAG)
 
 LDFLAGS?="-X github.com/oracle-samples/oci-secrets-store-csi-driver-provider/internal/server.BuildVersion=$(BUILD_VERSION)"
