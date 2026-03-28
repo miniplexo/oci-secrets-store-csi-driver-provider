@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Builds container image and pushes to registry
     env:
-      IMAGE_REGISTRY: ${{ inputs.IMAGE_REGISTRY }}
+      IMAGE_REGISTRY: ${{ inputs.IMAGE_REGISTRY != '' && inputs.IMAGE_REGISTRY || vars.IMAGE_REGISTRY }}
     outputs:
       IMAGE_PATH: ${{ steps.print-docker-image-path.outputs.IMAGE_PATH }}
     steps:
