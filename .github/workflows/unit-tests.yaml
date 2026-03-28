@@ -2,9 +2,7 @@ name: Unit Tests
 
 on:
   workflow_call: {}
-  push:
-    branches-ignore:
-      - gh-pages
+
 jobs:
   build-binary-n-test:
     name: Build Binary locally and run unit tests
